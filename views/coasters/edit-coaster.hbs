@@ -3,39 +3,40 @@
   <div class="row">
 
     <div class="col-md-6">
-      <h1 style="font-weight: 100">Nueva montaña rusa</h1>
+      <h1 style="font-weight: 100">Editar montaña rusa</h1>
     </div>
 
     <div class="col-md-6">
 
-      <form action="/coasters/new" method="POST">
+      <form action="edit" method="POST">
+      <input type="hidden" value="{{coaster._id}}" name="id">
         <div class="form-group">
           <label for="name-input">Nombre</label>
-          <input name="name" type="text" class="form-control" id="name-input" value="Pepito grillo">
+          <input name="name" type="text" class="form-control" id="name-input" value="{{coaster.name}}">
         </div>
         <div class="form-group">
           <label for="description-input">Descripción</label>
-          <input name="description" type="text" class="form-control" id="description-input" value="La mejor montaña rusa de Tenerife">
+          <input name="description" type="text" class="form-control" id="description-input" value="{{coaster.description}}">
         </div>
         <div class="form-group">
           <label for="inversions-input">Inversiones</label>
-          <input name="inversions" type="number" class="form-control" id="inversions-input" value="20">
+          <input name="inversions" type="number" class="form-control" id="inversions-input" value="{{coaster.inversions}}">
         </div>
         <div class="form-group">
           <label for="length-input">Longitud</label>
-          <input name="length" type="number" class="form-control" id="length-input" value="24">
+          <input name="length" type="number" class="form-control" id="length-input" value="{{coaster.length}}">
         </div>
         <div class="form-group">
           <label for="park-list">Parque en el que se encuentra:</label>
           <select name="park" class="form-control" id="park-list">
-            <option>Seleccionar</option>
+            <option value="{{coaster.park._id}}">{{coaster.park.name}}</option>
             {{#each parks}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
           </select>
         </div>
 
-        <button type="submit" class="btn btn-dark">Crear montaña rusa</button>
+        <button type="submit" class="btn btn-dark">Guardar Cambios</button>
         <a href="/coasters" class="btn btn-dark">Volver</a>
 
       </form>

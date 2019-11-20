@@ -1,17 +1,21 @@
 <div class="container coasters-index">
 
-  <h1 style="font-weight: 100">Nombre de la montaña rusa</h1>
+  <h1 style="font-weight: 100">{{name}}</h1>
 
-  <h4>Descripción</h4>
+  <h4>{{description}}</h4>
   <p>Descripción de montaña rusa</p>
-  <p><strong>Longitud: </strong> 000m | <strong>Inversiones: </strong> 0</p>
+  <p><strong>Longitud: </strong> {{length}}| <strong>Inversiones: </strong> {{inversions}}</p>
 
   <hr>
 
   <h5>Sobre el parque</h5>
-  <p><strong>Nombre</strong>: nombre del parque</p>
-  <p><strong>Descripción</strong>: descripción del parque</p>
+  <p><strong>Nombre</strong>: {{park.name}}</p>
+  <p><strong>Descripción</strong>: {{park.description}}</p>
 
   <a href="/coasters" class="btn btn-dark">Volver</a>
+
+
+
+
 
 </div>
